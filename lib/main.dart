@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'config/firebase_options.dart';
@@ -83,7 +84,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'EMCI - CORE PRUEBAS'),
     );
   }
 }
@@ -101,7 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final CollectionReference requerimientos =
       FirebaseFirestore.instance.collection('requerimientos');
 
-  Future<void> _create([DocumentSnapshot? documentSnapshot]) async {
+  Future<void> _create() async {
     // Create controllers for the text fields
     final TextEditingController nameController = TextEditingController();
     final TextEditingController statusController = TextEditingController();
@@ -137,9 +138,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     // Get the values from the controllers
                     final String name = nameController.text;
                     final String status = statusController.text;
+                    final String description = statusController.text;
 
-                    await requerimientos
-                        .add({"nombre": name, "estado": status});
+                    await requerimientos.add({
+                      "nombre": name,
+                      "descripcion": description,
+                      "estado": status
+                    });
 
                     // Hide the bottom sheet
                     Navigator.of(context).pop();
