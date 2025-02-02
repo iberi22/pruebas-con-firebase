@@ -1,23 +1,27 @@
 name: myapp
-description: A new Flutter project.
+description: Descripción de tu proyecto
 
-version: 1.0.0+1
-
+# Especifica la versión de Flutter y Dart
 environment:
   sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-
-  cupertino_icons: ^1.0.2
-  cloud_firestore: ^4.17.5
-  firebase_core: ^2.32.0
+  firebase_core: ^3.10.0
+  cloud_firestore: ^5.6.1
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+  freezed_annotation: ^2.4.1
+  dartz: ^0.10.1
+  json_annotation: ^4.8.1
+  firebase_auth: ^5.4.0
 
 dev_dependencies:
-  flutter_lints: ^2.0.0
   flutter_test:
     sdk: flutter
-
-flutter:
-  uses-material-design: true
+  freezed: ^2.4.6
+  build_runner: ^2.4.8
+  json_serializable: ^6.7.1
+  flutter_lints: ^5.0.0

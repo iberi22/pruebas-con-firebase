@@ -2,6 +2,12 @@
     "IDX.aI.enableInlineCompletion": true,
     "IDX.aI.enableCodebaseIndexing": true,
     "cSpell.words": [
-        "descripcion"
+        "cupertino",
+        "dartz",
+        "descripcion",
+        "firestore",
+        "riverpod",
+        "usecase",
+        "usecases"
     ]
 }
