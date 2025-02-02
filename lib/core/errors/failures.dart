@@ -1,32 +1,29 @@
+// lib/core/errors/failures.dart
 import 'package:flutter/foundation.dart';
 
 @immutable
 sealed class Failure {
-  const Failure();
+  final String? message;
+  const Failure({this.message}); // <-- ¡VOLVEMOS A PONER 'const' AQUÍ!
 }
 
 final class ServerFailure extends Failure {
-  final String? message;
   final int? statusCode;
-  const ServerFailure({this.message, this.statusCode});
+  const ServerFailure({super.message, this.statusCode});
 }
 
 final class CacheFailure extends Failure {
-  final String? message;
-  const CacheFailure({this.message});
+  const CacheFailure({super.message});
 }
 
 final class AuthFailure extends Failure {
-  final String? message;
-  const AuthFailure({this.message});
+  const AuthFailure({super.message});
 }
 
 final class InvalidDataFailure extends Failure {
-  final String? message;
-  const InvalidDataFailure({this.message});
+  const InvalidDataFailure({super.message});
 }
 
 final class UnknownFailure extends Failure {
-  final String? message;
-  const UnknownFailure({this.message});
+  const UnknownFailure({super.message});
 }

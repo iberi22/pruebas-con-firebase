@@ -1,5 +1,4 @@
-Aquí tienes el archivo .bat para crear la estructura de carpetas y archivos que especificaste:
-Batch
+
 @echo off
 
 :: Crear carpetas

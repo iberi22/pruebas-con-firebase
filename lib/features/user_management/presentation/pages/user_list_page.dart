@@ -36,8 +36,8 @@ class UserListPage extends ConsumerWidget {
   }
 
   void _showCreateUserDialog(BuildContext context, WidgetRef ref, User? user) {
-    final _nameController = TextEditingController(text: user?.name);
-    final _emailController = TextEditingController(text: user?.email);
+    final nameController = TextEditingController(text: user?.name);
+    final emailController = TextEditingController(text: user?.email);
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -47,11 +47,11 @@ class UserListPage extends ConsumerWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               TextField(
-                controller: _nameController,
+                controller: nameController,
                 decoration: const InputDecoration(labelText: 'Nombre'),
               ),
               TextField(
-                controller: _emailController,
+                controller: emailController,
                 decoration: const InputDecoration(labelText: 'Email'),
               ),
             ],
@@ -64,8 +64,8 @@ class UserListPage extends ConsumerWidget {
           ),
           ElevatedButton(
             onPressed: () async {
-              final name = _nameController.text.trim();
-              final email = _emailController.text.trim();
+              final name = nameController.text.trim();
+              final email = emailController.text.trim();
               if (name.isNotEmpty && email.isNotEmpty) {
                 Navigator.pop(context);
                 final newUser = User(

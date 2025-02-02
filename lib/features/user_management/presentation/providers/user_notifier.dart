@@ -25,7 +25,7 @@ class UserNotifier extends StateNotifier<UserState> {
   Future<void> getUsers() async {
     state = state.copyWith(status: UserStatus.loading);
 
-    final result = await _getUsers(NoParams());
+    final result = await _getUsers();
 
     state = result.fold(
       (failure) => state.copyWith(

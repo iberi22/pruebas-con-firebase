@@ -23,6 +23,8 @@ class UserModel with _$UserModel {
         email: user.email,
         avatar: user.avatar,
       );
+}
 
+extension UserEntityExtension on _UserModel {
   User toEntity() => User(id: id, name: name, email: email, avatar: avatar);
 }
